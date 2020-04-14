@@ -1,14 +1,16 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
-import ExploreContainer from '../components/ExploreContainer';
+import GoogleMap from '../components/GoogleMap';
 import './Home.css';
+import ActiveShopContainer from '../components/container/ActiveShopContainer';
 
 const Home: React.FC = () => {
+  console.log(('home'))
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+          <IonTitle>Stay Open</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -17,7 +19,8 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        <ActiveShopContainer />
+        <GoogleMap/>
       </IonContent>
     </IonPage>
   );
