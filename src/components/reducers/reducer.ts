@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { VisibilityFilters, SET_VISIBILITY_FILTER, SHOW_SHOP } from './../actions';
+import { SHOW_SHOP, SHOW_ALL } from './../actions';
 
-const { SHOW_ACTIVE } = VisibilityFilters
-
-function visibilityFilter(state = SHOW_ACTIVE, action:any) {
-    switch (action.type) {
-        case SET_VISIBILITY_FILTER:
-            return action.filter
+const locations = (state=[], action: any) => {
+    switch(action.type){
+        case SHOW_ALL:
+            return {
+                locations: action,
+            }
         default:
             return state
     }
@@ -16,9 +16,7 @@ function shop(state={}, action:any) {
     switch(action.type){
         case SHOW_SHOP:
             return {
-                id: action.id,
                 text: action.text,
-                active: true
             }
         default:
             return state
@@ -26,7 +24,7 @@ function shop(state={}, action:any) {
 }
 
 const shopApp = combineReducers({
-    visibilityFilter,
+    locations,
     shop
 })
 export default shopApp

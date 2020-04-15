@@ -5,7 +5,7 @@ import './Home.css';
 import ActiveShopContainer from '../components/container/ActiveShopContainer';
 
 const Home: React.FC = () => {
-  console.log(('home'))
+
   return (
     <IonPage>
       <IonHeader>

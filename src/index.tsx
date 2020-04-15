@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { render } from '@testing-library/react';
 import { createStore } from 'redux';
 import shopApp from './components/reducers/reducer';
 import { Provider } from 'react-redux';
@@ -15,6 +14,7 @@ export const store = createStore(
     shopApp,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
 ReactDOM.render(
     <Provider store={store}>
     <App />

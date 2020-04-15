@@ -8,20 +8,19 @@ const Shop = (props: any) => {
     menu.current?.open()
   }
   return (
-      <IonMenu side="start" menuId="first" ref={menu}>
-        <IonHeader>
-          <IonToolbar color="primary">
-            <IonTitle>{props.shop.text}</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent>
-            <p>Website:</p>
-
-            <p>Service:</p>
-            <p>Spec:</p>
-            <p>Operation Time:</p>
-        </IonContent>
-      </IonMenu>
+    <IonMenu side="start" menuId="first" ref={menu}>
+      <IonHeader>
+        <IonToolbar color="primary">
+          <IonTitle>{props.shop.text}</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+          <p>Website:</p>
+          <p>Service:</p>
+          <p>Spec:</p>
+          <p>Operation Time:</p>
+      </IonContent>
+    </IonMenu>
   )
 }
 
