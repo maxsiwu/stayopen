@@ -1,6 +1,15 @@
-.slider {
-    max-width: 240px;
+#slider {
+    animation-duration: 1s;
+    max-width: 320px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     position: fixed;
+    transition: .3s;
     z-index: 1;
+}
+.show {
+    transform: translateX(0);
+}
+
+.hidden {
+    transform: translateX(-320px);
 }
