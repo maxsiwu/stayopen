@@ -1,14 +1,17 @@
+import { IShop } from './../shop';
 import Shop from '../shop'
 import { showShop } from '../actions'
 import { connect } from 'react-redux'
+import { RootState } from '../reducers/reducer';
+import { Dispatch } from 'redux';
 
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: RootState) => ({
   shop: state.shop
 })
 
-const mapDispatchToProps = (dispatch: any) => ({
-  showShop: (text:string) => dispatch(showShop(text)),
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  showShop: (shop: IShop) => dispatch(showShop(shop)),
 })
 const ActiveShopContainer = connect(mapStateToProps, mapDispatchToProps)(Shop)
 

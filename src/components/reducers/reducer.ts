@@ -1,30 +1,32 @@
+import { IShop } from './../shop';
 import { combineReducers } from 'redux';
 import { SHOW_SHOP, SHOW_ALL } from './../actions';
 
-const locations = (state=[], action: any) => {
+const locations = (state:IShop[] =[], action: {type: string; shops:IShop[]}) => {
     switch(action.type){
         case SHOW_ALL:
-            return {
-                locations: action,
-            }
+            return action.shops;
         default:
-            return state
+            return state;
     }
 }
 
-function shop(state={}, action:any) {
+function shop(state:IShop|null = null, action: {type: string; shop:IShop|null}) {
     switch(action.type){
         case SHOW_SHOP:
             return {
-                text: action.text,
+                ...action.shop,
             }
         default:
-            return state
+            return state;
     }
 }
 
 const shopApp = combineReducers({
     locations,
-    shop
+    shop,
 })
+
 export default shopApp
+
+export type RootState = ReturnType<typeof shopApp>

@@ -8,20 +8,23 @@ import { showShop } from '../actions'
 
 function Slider(props: any) {
     let className = 'hidden'
-    if(props.location?.text) {
+    console.log(props)
+    if(props.location?.name) {
         className = 'show';
     }
     return (
         <IonContent id="slider" className={className}>
             <IonListHeader>
-                <IonLabel color="primary"><h2><b>{props.location.text}</b></h2></IonLabel>
+                <IonLabel color="primary"><h2><b>{props.location?.name}</b></h2></IonLabel>
                 <IonButton fill="clear" onClick={() => onClose()}>
                     <IonIcon color="medium" icon={closeOutline} size="large"></IonIcon>
                 </IonButton>
             </IonListHeader>
             <IonList>
                 <IonItem>
-                    <IonIcon color="medium" icon={desktopOutline}></IonIcon>&nbsp;&nbsp;
+                    <IonButton fill="clear" onClick={() => openUrl(props.location?.url)}>
+                        <IonIcon color="medium" icon={desktopOutline}></IonIcon>&nbsp;&nbsp;
+                    </IonButton>
                     <IonIcon color="medium" icon={callOutline}></IonIcon>
                 </IonItem>
                 <IonItem>
@@ -37,8 +40,11 @@ function Slider(props: any) {
     )
 }
 
-function onClose() {
-    store.dispatch(showShop(''))
+const onClose = () => {
+    store.dispatch(showShop(null))
+}
+const openUrl = (url: string) => {
+    window.open(url, '_blank')
 }
 
 export default Slider

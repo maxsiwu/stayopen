@@ -1,5 +1,4 @@
-import { store } from '..';
-import { showShop } from '../components/actions';
+import { IShop } from './../components/shop';
 const ICON_RESTAURANT = 'https://mt.googleapis.com/vt/icon/name=icons/onion/SHARED-mymaps-container-bg_4x.png,icons/onion/SHARED-mymaps-container_4x.png,icons/onion/1577-food-fork-knife_4x.png&highlight=ff000000,0288D1&scale=1.0'
 
 class GoogleMapServices {
@@ -29,7 +28,7 @@ class GoogleMapServices {
         });
     }
 
-    createMarker = (item: any, googleMap: any) => {
+    createMarker = (item: IShop, googleMap: any) => {
         return new window.google.maps.Marker({
             position: { lat: item.latitude, lng: item.longitude },
             map: googleMap,

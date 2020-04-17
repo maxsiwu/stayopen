@@ -25,7 +25,7 @@ class GoogleMap extends Component {
           for (const item of data) {
             GoogleMapService.createMarker(item, this.googleMap).addListener('click', () => {
               this.clickedOutside = false
-              store.dispatch(showShop(item.name))
+              store.dispatch(showShop(item))
             });
           }
         })
