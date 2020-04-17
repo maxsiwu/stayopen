@@ -7,7 +7,7 @@ export const showShop = (text: string) => ({
     text
 })
 
-export const loadLocations = (data:[]) => ({
+export const loadLocations = (data:any[]) => ({
     type: SHOW_ALL,
     shops: {
         ...data
