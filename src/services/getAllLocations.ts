@@ -13,8 +13,8 @@ const mockData = [
         longitude: -123.138763,
         latitude: 49.266666,
         url: 'https://www.cheesecakeetc.com/',
-        services: [],
-        category: ['Japanese']
+        services: ['Takeout', 'Delivery'],
+        categories: ['Japanese']
     },
     {
         locationId: 2,
@@ -22,7 +22,7 @@ const mockData = [
         longitude:  -123.120790,
         latitude: 49.275383,
         url: 'https://minamirestaurant.com/',
-        services: [],
-        category: ['Japanese']
+        services: ['Takeout', 'Delivery'],
+        categories: ['Japanese', 'Sushi']
     }
 ]

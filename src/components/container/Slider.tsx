@@ -1,7 +1,7 @@
 import React from 'react'
-import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonText, IonIcon, IonButton } from '@ionic/react'
+import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonText, IonIcon, IonButton, IonBadge } from '@ionic/react'
 import './Slider.css'
-import { callOutline, desktopOutline, closeOutline } from 'ionicons/icons'
+import { globeOutline, closeOutline } from 'ionicons/icons'
 import { store } from '../..'
 import { showShop } from '../actions'
 import { IShop } from '../shop'
@@ -20,20 +20,24 @@ function Slider(props: {location: IShop | null}) {
                     <IonIcon color="medium" icon={closeOutline} size="large"></IonIcon>
                 </IonButton>
             </IonListHeader>
-            <IonList>
+            <IonList lines="none">
                 <IonItem>
                     <IonButton fill="clear" onClick={() => openUrl(props.location?.url)}>
-                        <IonIcon color="medium" icon={desktopOutline}></IonIcon>&nbsp;&nbsp;
+                        <IonIcon color="medium" icon={globeOutline}></IonIcon>&nbsp;&nbsp;
                         <IonText color="medium">Visit Website</IonText>
                     </IonButton>
                 </IonItem>
                 <IonItem>
                     <IonLabel><h3><b>Services</b></h3></IonLabel>
-                    <IonText color="medium">TakeOut | Delivery</IonText>
+                    {
+                        props.location?.services?.map(service => <IonBadge color="secondary">{service}</IonBadge>)
+                    }
                 </IonItem>
                 <IonItem>
                     <IonLabel><h3><b>Category</b></h3></IonLabel>
-                    <IonText color="medium">Food</IonText>
+                    {
+                        props.location?.categories?.map(category => <IonBadge color="light">{category}</IonBadge>)
+                    }
                 </IonItem>
             </IonList>
         </IonContent>

@@ -13,3 +13,7 @@
 .hidden {
     transform: translateX(-320px);
 }
+ion-badge {
+    margin-left: .5em;
+}
+

@@ -8,7 +8,7 @@ export interface IShop {
   latitude: number,
   url: string,
   services: string[],
-  category: string[]
+  categories: string[]
 }
 
 const menu = createRef<HTMLIonMenuElement>();
