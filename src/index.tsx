@@ -6,10 +6,6 @@ import { createStore } from 'redux';
 import shopApp from './components/reducers/reducer';
 import { Provider } from 'react-redux';
 
-declare global {
-    interface Window { __REDUX_DEVTOOLS_EXTENSION__?: any; }
-}
-
 export const store = createStore(
     shopApp,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
