@@ -16,13 +16,13 @@ function Slider(props: {location: IShop | null}) {
         <IonContent id="slider" className={className} key="slider-block">
             <IonListHeader key="list-header">
                 <IonLabel color="primary" key="item-name"><h2><b>{props.location?.name}</b></h2></IonLabel>
-                <IonButton fill="clear" onClick={() => onClose()} key="close-button">
+                <IonButton color="light" onClick={() => onClose()} key="close-button">
                     <IonIcon color="medium" icon={closeOutline} size="large" key="close-button-icon"></IonIcon>
                 </IonButton>
             </IonListHeader>
             <IonList lines="none" key="list">
                 <IonItem key="list-link">
-                    <IonButton fill="clear" onClick={() => openUrl(props.location?.url)} key="list-button">
+                    <IonButton color="light" onClick={() => openUrl(props.location?.url)} key="list-button">
                         <IonIcon color="medium" icon={globeOutline} key="link-icon"></IonIcon>&nbsp;&nbsp;
                         <IonLabel color="medium" key="link-text">Visit Website</IonLabel>
                     </IonButton>
