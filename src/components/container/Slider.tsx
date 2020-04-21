@@ -3,7 +3,7 @@ import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonText, IonIcon
 import './Slider.css'
 import { globeOutline, closeOutline } from 'ionicons/icons'
 import { store } from '../..'
-import { showShop } from '../actions'
+import { hideShop } from '../actions'
 import { IShop } from '../shop'
 
 
@@ -49,7 +49,7 @@ function Slider(props: {location: IShop | null}) {
 }
 
 const onClose = () => {
-    store.dispatch(showShop(null))
+    store.dispatch(hideShop())
 }
 const openUrl = (url?: string) => {
     window.open(url, '_blank')
