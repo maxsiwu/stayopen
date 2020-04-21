@@ -7,7 +7,7 @@ import { hideShop } from '../actions'
 import { IShop } from '../shop'
 
 
-function Slider(props: {location: IShop | null}) {
+function Slider(props: {location: IShop}) {
     let className = 'hidden'
     if(props.location?.name) {
         className = 'show';

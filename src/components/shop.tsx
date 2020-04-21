@@ -12,7 +12,7 @@ export interface IShop {
 }
 
 const menu = createRef<HTMLIonMenuElement>();
-const Shop = (props: {shop: IShop | null}) => {
+const Shop = (props: {shop: IShop}) => {
   if( props ) {
     menu.current?.open()
   }

@@ -4,7 +4,7 @@ export const SHOW_ALL= 'SHOW_ALL'
 export const HIDE_SHOP= 'HIDE_SHOP'
 
 
-export const showShop = (shop: IShop | null) => ({
+export const showShop = (shop: IShop) => ({
     type: SHOW_SHOP,
     shop
 })
