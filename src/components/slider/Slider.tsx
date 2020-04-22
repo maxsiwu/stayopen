@@ -36,7 +36,7 @@ function Slider(props: {location: IShop}) {
                     }
                 </ul>
                 <IonItem key="list-cat">
-                    <IonLabel key="cat-label"><h2><b>Business Category</b></h2></IonLabel>
+                    <IonLabel key="cat-label"><h2><b>Cuisine</b></h2></IonLabel>
                 </IonItem>
                 <ul key="list-cat-content">
                     {
