@@ -1,5 +1,5 @@
 import React, { createRef } from 'react'
-import Slider from './container/Slider';
+import Slider from './slider/Slider';
 import { IonText } from '@ionic/react';
 
 export interface IShop {

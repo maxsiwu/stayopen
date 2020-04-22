@@ -1,8 +1,12 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
 /** Ionic CSS Variables **/
 :root {
+  /** custom font **/
+  --ion-font-family: 'Nunito Sans', sans-serif;
   /** primary **/
   --ion-color-primary: #FA0039;
   --ion-color-primary-rgb: 250, 0, 57;

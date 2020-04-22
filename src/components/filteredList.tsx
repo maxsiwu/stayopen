@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from './container/Sidebar';
+import Sidebar from './sidebar/Sidebar';
 import { IShop } from './shop';
 
 const FilteredList = (props:{filteredList: IShop[]}) => {

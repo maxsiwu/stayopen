@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
-import GoogleMap from '../components/GoogleMap';
+import GoogleMap from '../components/map/GoogleMap';
 import './Home.css';
 import ActiveShopContainer from '../components/container/ActiveShopContainer';
 import SearchSliderContainer from '../components/container/SearchSliderContainer';
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle>Stay Open</IonTitle>
+          <IonTitle><b>Stay Open</b></IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

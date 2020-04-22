@@ -1,5 +1,5 @@
 import { IShop } from './../components/shop';
-import GoogleMap from '../components/GoogleMap';
+import GoogleMap from '../components/map/GoogleMap';
 const ICON_RESTAURANT = 'https://mt.googleapis.com/vt/icon/name=icons/onion/SHARED-mymaps-container-bg_4x.png,icons/onion/SHARED-mymaps-container_4x.png,icons/onion/1577-food-fork-knife_4x.png&highlight=ff000000,0288D1&scale=1.0'
 
 class GoogleMapServices {

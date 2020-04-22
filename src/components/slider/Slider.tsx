@@ -15,34 +15,34 @@ function Slider(props: {location: IShop}) {
     return (
         <IonContent id="slider" className={className} key="slider-block">
             <IonListHeader key="list-header">
-                <IonLabel color="primary" key="item-name"><h2><b>{props.location?.name}</b></h2></IonLabel>
+                <IonLabel color="primary" key="item-name"><h1>{props.location?.name}</h1></IonLabel>
                 <IonButton color="light" onClick={() => onClose()} key="close-button">
                     <IonIcon color="medium" icon={closeOutline} size="large" key="close-button-icon"></IonIcon>
                 </IonButton>
             </IonListHeader>
             <IonList lines="none" key="list">
                 <IonItem key="list-link">
-                    <IonButton color="light" onClick={() => openUrl(props.location?.url)} key="list-button">
+                    <IonItem color="light" onClick={() => openUrl(props.location?.url)} key="list-button">
                         <IonIcon color="medium" icon={globeOutline} key="link-icon"></IonIcon>&nbsp;&nbsp;
                         <IonLabel color="medium" key="link-text">Visit Website</IonLabel>
-                    </IonButton>
+                    </IonItem>
                 </IonItem>
                 <IonItem key="list-service">
-                    <IonLabel key="service-label"><h3><b>Services</b></h3></IonLabel>
+                    <IonLabel key="service-label"><h2><b>Services</b></h2></IonLabel>
                 </IonItem>
-                <IonItem key="list-service-content">
+                <ul key="list-service-content">
                     {
-                        props.location?.services?.map(service => <IonBadge color="dark" key={'service' + service}>{service}</IonBadge>)
+                        props.location?.services?.map(service => <li color="dark" key={'service' + service}>{service}</li>)
                     }
-                </IonItem>
+                </ul>
                 <IonItem key="list-cat">
-                    <IonLabel key="cat-label"><h3><b>Category</b></h3></IonLabel>
+                    <IonLabel key="cat-label"><h2><b>Business Category</b></h2></IonLabel>
                 </IonItem>
-                <IonItem key="list-cat-content">
+                <ul key="list-cat-content">
                     {
-                        props.location?.categories?.map(category => <IonBadge color="light" key={'cat' + category}>{category}</IonBadge>)
+                        props.location?.categories?.map(category => <li color="light" key={'cat' + category}>{category}</li>)
                     }
-                </IonItem>
+                </ul>
             </IonList>
         </IonContent>
     )

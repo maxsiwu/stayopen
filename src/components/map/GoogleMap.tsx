@@ -1,8 +1,8 @@
 import React, { Component, createRef } from 'react'
-import { showShop, loadLocations, showFilteredLocations } from './actions'
-import { store } from '../index'
-import { getAllLocations } from '../services/getAllLocations'
-import GoogleMapService from '../services/GoogleMapService'
+import { showShop, loadLocations, showFilteredLocations } from '../actions'
+import { store } from '../../index'
+import { getAllLocations } from '../../services/getAllLocations'
+import GoogleMapService from '../../services/GoogleMapService'
 
 class GoogleMap extends Component {
   googleMapRef = createRef<HTMLDivElement>()
