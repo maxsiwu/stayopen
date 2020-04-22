@@ -7,3 +7,6 @@
 ion-label {
     padding-left: 8px;
 }
+ion-item {
+    cursor: pointer;
+}

@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
 import { IShop } from '../shop'
-import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonButton, IonSearchbar, IonText } from '@ionic/react'
+import { IonList, IonItem, IonLabel, IonContent, IonSearchbar } from '@ionic/react'
 import { store } from '../..';
 import { showFilteredLocations, showShop } from '../actions';
 
 function Sidebar(props: {locations: IShop[]}) {
     const [searchText, setSearchText] = useState('');
-    let list = <IonLabel color="medium">Search by typing</IonLabel>;
+    let list = <IonLabel color="medium">Help businesses to stay open</IonLabel>;
     if(props.locations && props.locations.length > 0 && searchText !== '') {
         list =  <IonList lines="none" key="search-result">
             { props.locations.map((location, index) => (
@@ -18,7 +18,7 @@ function Sidebar(props: {locations: IShop[]}) {
         </IonList>
     }
     if (searchText && searchText !== '' && props.locations.length == 0){
-        list = <IonText>No result</IonText>
+        list = <IonLabel color="medium">No result</IonLabel>
     }
 
     return (
@@ -27,7 +27,6 @@ function Sidebar(props: {locations: IShop[]}) {
                 setSearchText(e.detail.value!);
                 sendToStore(e.detail.value!);
             }}></IonSearchbar>
-            {/* <IonLabel color="primary" key="sidebar-heading"><h2><b>Search for Businesses</b></h2></IonLabel> */}
             {list}
 
         </IonContent>
