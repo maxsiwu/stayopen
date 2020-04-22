@@ -3,18 +3,16 @@ import './Sidebar.css'
 import { IShop } from '../shop'
 import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonButton, IonSearchbar, IonText } from '@ionic/react'
 import { store } from '../..';
-import { showFilteredLocations } from '../actions';
+import { showFilteredLocations, showShop } from '../actions';
 
 function Sidebar(props: {locations: IShop[]}) {
     const [searchText, setSearchText] = useState('');
-    let list = <IonText>Search by typing</IonText>;
-    if(props.locations && props.locations.length > 0) {
+    let list = <IonLabel color="medium">Search by typing</IonLabel>;
+    if(props.locations && props.locations.length > 0 && searchText !== '') {
         list =  <IonList lines="none" key="search-result">
             { props.locations.map((location, index) => (
-                <IonItem key={"search-result-item-" + index}>
-                    <IonButton color="light" onClick={() => openLocation()} key={"item-button-" + index}>
-                        <IonLabel color="medium" key={"item-info-" + index}>{location.name}</IonLabel>
-                    </IonButton>
+                <IonItem key={"search-result-item-" + index} onClick={() => openLocation(location)} color="light" lines="full" detail={true}>
+                    <IonLabel color="medium" key={"item-info-" + index}>{location.name}</IonLabel>
                 </IonItem>
             ))}
         </IonList>
@@ -23,17 +21,13 @@ function Sidebar(props: {locations: IShop[]}) {
         list = <IonText>No result</IonText>
     }
 
-
-
     return (
-        <IonContent id="sidebar" key="sidebar-block">
-            <IonListHeader key="sidebar-header">
-                <IonSearchbar value={searchText} onIonChange={e => {
-                    setSearchText(e.detail.value!);
-                    sendToStore(e.detail.value!);
-                }}></IonSearchbar>
-                {/* <IonLabel color="primary" key="sidebar-heading"><h2><b>Search for Businesses</b></h2></IonLabel> */}
-            </IonListHeader>
+        <IonContent id="sidebar" key="sidebar-block" >
+            <IonSearchbar value={searchText} onIonChange={e => {
+                setSearchText(e.detail.value!);
+                sendToStore(e.detail.value!);
+            }}></IonSearchbar>
+            {/* <IonLabel color="primary" key="sidebar-heading"><h2><b>Search for Businesses</b></h2></IonLabel> */}
             {list}
 
         </IonContent>
@@ -45,8 +39,8 @@ const sendToStore = (value: string) => {
     store.dispatch(showFilteredLocations(value, fullList));
 }
 
-const openLocation = () => {
-    console.log('hi')
+const openLocation = (location: IShop) => {
+    store.dispatch(showShop(location));
 }
 
 export default Sidebar

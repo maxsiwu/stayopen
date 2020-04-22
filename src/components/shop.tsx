@@ -16,7 +16,7 @@ const Shop = (props: {shop: IShop | null}) => {
   if(props.shop) {
     return <Slider location={props.shop}></Slider>
   }else {
-    return <IonText>Null</IonText>
+    return <IonText></IonText>
   }
 }
 

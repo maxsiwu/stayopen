@@ -4,6 +4,6 @@
     position: fixed;
     z-index: 1;
 }
-ion-searchbar {
-    padding-left: 0 !important;
+ion-label {
+    padding-left: 8px;
 }
