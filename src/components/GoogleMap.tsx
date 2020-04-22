@@ -1,5 +1,5 @@
 import React, { Component, createRef } from 'react'
-import { showShop, loadLocations } from './actions'
+import { showShop, loadLocations, showFilteredLocations } from './actions'
 import { store } from '../index'
 import { getAllLocations } from '../services/getAllLocations'
 import GoogleMapService from '../services/GoogleMapService'
@@ -18,6 +18,7 @@ class GoogleMap extends Component {
       getAllLocations()
         .then((data) => {
           store.dispatch(loadLocations(data))
+          // store.dispatch(showFilteredLocations('', data))
           for (const item of data) {
             if (this.googleMap) {
               GoogleMapService.createMarker(item, this.googleMap).addListener('click', () => {

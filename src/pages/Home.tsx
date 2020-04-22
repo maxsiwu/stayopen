@@ -3,6 +3,7 @@ import React from 'react';
 import GoogleMap from '../components/GoogleMap';
 import './Home.css';
 import ActiveShopContainer from '../components/container/ActiveShopContainer';
+import SearchSliderContainer from '../components/container/SearchSliderContainer';
 
 const Home: React.FC = () => {
 
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <SearchSliderContainer />
         <ActiveShopContainer />
         <GoogleMap/>
       </IonContent>

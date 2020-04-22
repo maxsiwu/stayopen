@@ -1,5 +1,6 @@
 import React, { createRef } from 'react'
 import Slider from './container/Slider';
+import { IonText } from '@ionic/react';
 
 export interface IShop {
   locationId: number,
@@ -11,14 +12,12 @@ export interface IShop {
   categories: string[]
 }
 
-const menu = createRef<HTMLIonMenuElement>();
-const Shop = (props: {shop: IShop}) => {
-  if( props ) {
-    menu.current?.open()
+const Shop = (props: {shop: IShop | null}) => {
+  if(props.shop) {
+    return <Slider location={props.shop}></Slider>
+  }else {
+    return <IonText>Null</IonText>
   }
-  return (
-    <Slider location={props.shop}></Slider>
-  )
 }
 
 export default Shop

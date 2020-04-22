@@ -1,0 +1,9 @@
+#sidebar {
+    max-width: 320px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 1;
+}
+ion-searchbar {
+    padding-left: 0 !important;
+}
