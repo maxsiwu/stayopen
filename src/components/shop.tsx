@@ -3,13 +3,23 @@ import Slider from './slider/Slider';
 import { IonText } from '@ionic/react';
 
 export interface IShop {
-  locationId: number,
+  id: number,
   name: string,
   longitude: number,
   latitude: number,
   url: string,
-  services: string[],
-  categories: string[]
+  services: IService[],
+  categories: ICategory[]
+}
+
+export interface IService {
+  id: number,
+  name: string
+}
+
+export interface ICategory {
+  id: number,
+  name: string
 }
 
 const Shop = (props: {shop: IShop | null}) => {
