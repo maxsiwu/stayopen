@@ -13,21 +13,19 @@ class GoogleMap extends Component {
     // create google map
     GoogleMapService.createGoogleMap(this.googleMapRef).then((googleMap: GoogleMap) => {
       this.googleMap = googleMap
-
-      // add markers
-      getAllLocations()
-        .then((data) => {
-          store.dispatch(loadLocations(data))
-          // store.dispatch(showFilteredLocations('', data))
-          for (const item of data) {
-            if (this.googleMap) {
-              GoogleMapService.createMarker(item, this.googleMap).addListener('click', () => {
-                this.clickedOutside = false
-                store.dispatch(showShop(item))
-              });
-            }
-          }
-        })
+    })
+    // add markers
+    getAllLocations()
+    .then((data) => {
+      store.dispatch(loadLocations(data))
+      for (const item of data) {
+        if (this.googleMap) {
+          GoogleMapService.createMarker(item, this.googleMap).addListener('click', () => {
+            this.clickedOutside = false
+            store.dispatch(showShop(item))
+          });
+        }
+      }
     })
   }
 
