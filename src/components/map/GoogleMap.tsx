@@ -1,5 +1,5 @@
 import React, { Component, createRef } from 'react'
-import { showShop, loadLocations, showFilteredLocations } from '../actions'
+import { showLocation, loadLocations } from '../actions'
 import { store } from '../../index'
 import { getAllLocations } from '../../services/getAllLocations'
 import GoogleMapService from '../../services/GoogleMapService'
@@ -22,7 +22,7 @@ class GoogleMap extends Component {
         if (this.googleMap) {
           GoogleMapService.createMarker(item, this.googleMap).addListener('click', () => {
             this.clickedOutside = false
-            store.dispatch(showShop(item))
+            store.dispatch(showLocation(item))
           });
         }
       }

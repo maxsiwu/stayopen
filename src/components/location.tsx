@@ -1,8 +1,8 @@
-import React, { createRef } from 'react'
+import React from 'react'
 import Slider from './slider/Slider';
 import { IonText } from '@ionic/react';
 
-export interface IShop {
+export interface ILocation {
   id: number,
   name: string,
   longitude: number,
@@ -22,12 +22,12 @@ export interface ICategory {
   name: string
 }
 
-const Shop = (props: {shop: IShop | null}) => {
-  if(props.shop) {
-    return <Slider location={props.shop}></Slider>
+const Location = (props: {location: ILocation | null}) => {
+  if(props.location) {
+    return <Slider location={props.location}></Slider>
   }else {
     return <IonText></IonText>
   }
 }
 
-export default Shop
+export default Location

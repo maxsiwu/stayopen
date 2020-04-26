@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import React from 'react';
 import GoogleMap from '../components/map/GoogleMap';
 import './Home.css';
-import ActiveShopContainer from '../components/container/ActiveShopContainer';
+import ActiveLocationContainer from '../components/container/ActiveLocationContainer';
 import SearchSliderContainer from '../components/container/SearchSliderContainer';
 
 const Home: React.FC = () => {
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <SearchSliderContainer />
-        <ActiveShopContainer />
+        <ActiveLocationContainer />
         <GoogleMap/>
       </IonContent>
     </IonPage>

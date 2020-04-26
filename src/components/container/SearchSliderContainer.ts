@@ -1,5 +1,5 @@
 import { showFilteredLocations } from './../actions';
-import { IShop } from './../shop';
+import { ILocation } from '../location';
 import { connect } from 'react-redux'
 import { RootState } from '../reducers/reducer';
 import { Dispatch } from 'redux';
@@ -11,7 +11,7 @@ const mapStateToProps = (state: RootState) => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    showFilteredLocations: (keyword: string, filteredList: IShop[]) => dispatch(showFilteredLocations(keyword, filteredList)),
+    showFilteredLocations: (keyword: string, filteredList: ILocation[]) => dispatch(showFilteredLocations(keyword, filteredList)),
 })
 const SearchSliderContainer = connect(mapStateToProps, mapDispatchToProps)(FilteredList)
 

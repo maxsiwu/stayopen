@@ -3,11 +3,11 @@ import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonIcon, IonButt
 import './Slider.css'
 import { globeOutline, closeOutline } from 'ionicons/icons'
 import { store } from '../..'
-import { hideShop } from '../actions'
-import { IShop } from '../shop'
+import { hideLocation } from '../actions'
+import { ILocation } from '../location'
 
 
-function Slider(props: {location: IShop}) {
+function Slider(props: {location: ILocation}) {
     let className = 'hidden';
     let link;
     if(props.location?.name) {
@@ -55,7 +55,7 @@ function Slider(props: {location: IShop}) {
 }
 
 const onClose = () => {
-    store.dispatch(hideShop())
+    store.dispatch(hideLocation())
 }
 const openUrl = (url?: string) => {
     window.open(url, '_blank')

@@ -1,26 +1,26 @@
-import { IShop } from './shop';
-export const SHOW_SHOP= 'SHOW_SHOP'
+import { ILocation } from './location';
+export const SHOW_LOCATION= 'SHOW_LOCATION'
 export const SHOW_ALL= 'SHOW_ALL'
-export const HIDE_SHOP= 'HIDE_SHOP'
+export const HIDE_LOCATION= 'HIDE_LOCATION'
 export const SHOW_FILTERED = 'SHOW_FILTERED'
 
 
-export const showShop = (shop: IShop) => ({
-    type: SHOW_SHOP,
-    shop
+export const showLocation = (location: ILocation) => ({
+    type: SHOW_LOCATION,
+    location
 })
 
-export const showFilteredLocations = (keyword: string, shops: IShop[]) => ({
+export const showFilteredLocations = (keyword: string, locations: ILocation[]) => ({
     type: SHOW_FILTERED,
-    shops,
+    locations,
     keyword,
 })
-export const hideShop = () => ({
-    type: HIDE_SHOP,
-    shop: null
+export const hideLocation = () => ({
+    type: HIDE_LOCATION,
+    location: null
 })
 
-export const loadLocations = (shops:IShop[]) => ({
+export const loadLocations = (locations:ILocation[]) => ({
     type: SHOW_ALL,
-    shops
+    locations
 })

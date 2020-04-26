@@ -1,8 +1,8 @@
 import React from 'react'
 import Sidebar from './sidebar/Sidebar';
-import { IShop } from './shop';
+import { ILocation } from './location';
 
-const FilteredList = (props:{filteredList: IShop[]}) => {
+const FilteredList = (props:{filteredList: ILocation[]}) => {
   return (
     <Sidebar locations={props.filteredList}></Sidebar>
   )

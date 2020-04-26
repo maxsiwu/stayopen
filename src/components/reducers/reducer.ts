@@ -1,43 +1,43 @@
-import { IShop } from './../shop';
+import { ILocation } from '../location';
 import { combineReducers } from 'redux';
-import { SHOW_SHOP, SHOW_ALL, HIDE_SHOP, SHOW_FILTERED } from './../actions';
+import { SHOW_LOCATION, SHOW_ALL, HIDE_LOCATION, SHOW_FILTERED } from './../actions';
 
-const locations = (state:IShop[] =[], action: {type: string; shops:IShop[];}) => {
+const locations = (state:ILocation[] =[], action: {type: string; locations:ILocation[];}) => {
     switch(action.type){
         case SHOW_ALL:
-            return action.shops;
+            return action.locations;
         default:
             return state;
     }
 }
 
-const filteredLocations = (state:IShop[] =[], action: {type: string; shops:IShop[]; keyword?: string}) => {
+const filteredLocations = (state:ILocation[] =[], action: {type: string; locations:ILocation[]; keyword?: string}) => {
     switch(action.type){
         case SHOW_FILTERED:
             let keyword = action.keyword ? action.keyword.toLowerCase() : '';
-            return action.shops.filter(s => s.name.toLowerCase().includes(keyword));
+            return action.locations.filter(s => s.name.toLowerCase().includes(keyword));
         default:
             return state;
     }
 }
 
-function shop(state:IShop|null = null, action: {type: string; shop:IShop|null}) {
+function location(state:ILocation|null = null, action: {type: string; location:ILocation|null}) {
     switch(action.type){
-        case SHOW_SHOP:
-            return action.shop;
-        case HIDE_SHOP:
+        case SHOW_LOCATION:
+            return action.location;
+        case HIDE_LOCATION:
             return null
         default:
             return state;
     }
 }
 
-const shopApp = combineReducers({
+const locationApp = combineReducers({
     locations,
     filteredLocations,
-    shop,
+    location,
 })
 
-export default shopApp
+export default locationApp
 
-export type RootState = ReturnType<typeof shopApp>
+export type RootState = ReturnType<typeof locationApp>

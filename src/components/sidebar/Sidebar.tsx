@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
-import { IShop } from '../shop'
+import { ILocation } from '../location'
 import { IonList, IonItem, IonLabel, IonContent, IonSearchbar } from '@ionic/react'
 import { store } from '../..';
-import { showFilteredLocations, showShop } from '../actions';
+import { showFilteredLocations, showLocation } from '../actions';
 
-function Sidebar(props: {locations: IShop[]}) {
+function Sidebar(props: {locations: ILocation[]}) {
     const [searchText, setSearchText] = useState('');
     let list = <IonLabel color="medium">Help businesses to stay open</IonLabel>;
     if(props.locations && props.locations.length > 0 && searchText !== '') {
@@ -38,8 +38,8 @@ const sendToStore = (value: string) => {
     store.dispatch(showFilteredLocations(value, fullList));
 }
 
-const openLocation = (location: IShop) => {
-    store.dispatch(showShop(location));
+const openLocation = (location: ILocation) => {
+    store.dispatch(showLocation(location));
 }
 
 export default Sidebar
