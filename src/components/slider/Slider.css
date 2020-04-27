@@ -6,13 +6,13 @@
     transition: .3s;
     z-index: 1;
 }
-/* .show {
+.show {
     transform: translateX(0);
 }
 
 .hidden {
     transform: translateX(-320px);
-} */
+}
 ion-badge {
     margin-right: .5em;
 }

@@ -26,16 +26,27 @@ const location = (state:ILocation|null = null, action: {type: string; location:I
         case SHOW_LOCATION:
             return action.location;
         case HIDE_LOCATION:
-            return null
+            return action.location;
         default:
             return state;
     }
 }
 
+const isSliderOpen = (state: boolean = false, action: {type: string; isOpen: boolean}) => {
+    switch(action.type){
+        case SHOW_LOCATION:
+            return true;
+        case HIDE_LOCATION:
+            return false;
+        default:
+            return state;
+    }
+}
 const locationApp = combineReducers({
     locations,
     filteredLocations,
     location,
+    isSliderOpen
 })
 
 export default locationApp

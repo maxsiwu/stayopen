@@ -7,11 +7,15 @@ import { hideLocation } from '../actions'
 import { ILocation } from '../location'
 
 
-function Slider(props: {location: ILocation}) {
+function Slider(props: {location: ILocation | null}) {
     let className = 'hidden';
     let link;
-    if(props.location?.name) {
+    const isOpen = store.getState().isSliderOpen;
+
+    if(isOpen){
         className = 'show';
+    }else {
+        className = 'hidden';
     }
     if(props.location?.url) {
         link =  <IonItem color="light" onClick={() => openUrl(props.location?.url)} key="list-button">

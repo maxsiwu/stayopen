@@ -1,6 +1,5 @@
 import React from 'react'
 import Slider from './slider/Slider';
-import { IonText } from '@ionic/react';
 
 export interface ILocation {
   id: number,
@@ -23,11 +22,7 @@ export interface ICategory {
 }
 
 const Location = (props: {location: ILocation | null}) => {
-  if(props.location) {
-    return <Slider location={props.location}></Slider>
-  }else {
-    return <IonText></IonText>
-  }
+  return <Slider location={props.location}></Slider>
 }
 
 export default Location

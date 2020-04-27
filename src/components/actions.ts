@@ -1,3 +1,4 @@
+import { store } from './../index';
 import { ILocation } from './location';
 export const SHOW_LOCATION= 'SHOW_LOCATION'
 export const SHOW_ALL= 'SHOW_ALL'
@@ -17,7 +18,8 @@ export const showFilteredLocations = (keyword: string, locations: ILocation[]) =
 })
 export const hideLocation = () => ({
     type: HIDE_LOCATION,
-    location: null
+    location: store.getState().location,
+    isOpen: false
 })
 
 export const loadLocations = (locations:ILocation[]) => ({
