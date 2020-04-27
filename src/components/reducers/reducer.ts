@@ -21,7 +21,7 @@ const filteredLocations = (state:ILocation[] =[], action: {type: string; locatio
     }
 }
 
-function location(state:ILocation|null = null, action: {type: string; location:ILocation|null}) {
+const location = (state:ILocation|null = null, action: {type: string; location:ILocation|null}) => {
     switch(action.type){
         case SHOW_LOCATION:
             return action.location;

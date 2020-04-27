@@ -11,7 +11,7 @@ const mapStateToProps = (state: RootState) => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  showLocation: (location: ILocation) => dispatch(showLocation(location)),
+  showLocation (location: ILocation) {dispatch(showLocation(location))},
 })
 const ActiveLocationContainer = connect(mapStateToProps, mapDispatchToProps)(Location)
 
