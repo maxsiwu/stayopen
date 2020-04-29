@@ -34,3 +34,4 @@ jobs:
         ftp-username: ${{ secrets.FTP_STAYOPEN_USER }}
         ftp-password: ${{ secrets.FTP_STATOPEN_PW }}
         local-dir: build
+        git-ftp-args: --all
