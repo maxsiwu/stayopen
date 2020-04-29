@@ -1,5 +1,6 @@
 #slider {
     animation-duration: 1s;
+    background-color: white;
     max-width: 320px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     position: fixed;

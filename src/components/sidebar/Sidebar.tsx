@@ -8,7 +8,9 @@ import { showFilteredLocations, showLocation } from '../actions';
 function Sidebar(props: {locations: ILocation[]}) {
     const [searchText, setSearchText] = useState('');
     let list = <IonLabel color="medium">Help businesses to stay open</IonLabel>;
+    let className;
     if(props.locations && props.locations.length > 0 && searchText !== '') {
+        className = 'auto'
         list =  <IonList lines="none" key="search-result">
             { props.locations.map((location, index) => (
                 <IonItem key={"search-result-item-" + index} onClick={() => openLocation(location)} color="light" lines="full" detail={true}>
@@ -22,8 +24,8 @@ function Sidebar(props: {locations: ILocation[]}) {
     }
 
     return (
-        <IonContent id="sidebar" key="sidebar-block" >
-            <IonSearchbar value={searchText} onIonChange={e => {
+        <IonContent id="sidebar" key="sidebar-block" className={className}>
+            <IonSearchbar value={searchText} color="light" onIonChange={e => {
                 setSearchText(e.detail.value!);
                 sendToStore(e.detail.value!);
             }}></IonSearchbar>
