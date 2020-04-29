@@ -1,5 +1,5 @@
 import React from 'react'
-import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonIcon, IonButton, IonBadge } from '@ionic/react'
+import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonIcon, IonButton } from '@ionic/react'
 import './Slider.css'
 import { globeOutline, closeOutline } from 'ionicons/icons'
 import { store } from '../..'
