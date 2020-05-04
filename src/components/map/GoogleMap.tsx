@@ -27,6 +27,7 @@ class GoogleMap extends Component {
         }
       }
     })
+
   }
 
   render() {
