@@ -19,7 +19,7 @@ function Sidebar(props: {locations: ILocation[]}) {
             ))}
         </IonList>
     }
-    if (searchText && searchText !== '' && props.locations.length == 0){
+    if (searchText && searchText !== '' && props.locations.length === 0){
         list = <IonLabel color="medium">No result</IonLabel>
     }
 
