@@ -24,6 +24,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+      env:
+        REACT_APP_GOOGLE_API_KEY: ${{ secrets.GOOGLE_MAP_API_KEY }}
     - run: npm ci
     - run: npx ionic build --prod
     - name: FTP Deploy
