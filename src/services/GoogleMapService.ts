@@ -3,7 +3,7 @@ import GoogleMap from '../components/map/GoogleMap';
 const ICON_RESTAURANT = 'https://mt.googleapis.com/vt/icon/name=icons/onion/SHARED-mymaps-container-bg_4x.png,icons/onion/SHARED-mymaps-container_4x.png,icons/onion/1577-food-fork-knife_4x.png&highlight=ff000000,0288D1&scale=1.0'
 
 class GoogleMapServices {
-    private GOOGLE_MAP_API_KEY = 'AIzaSyB5VLHtO6IMfBR5wwp0_YB123Gje7ogIDo';
+    private GOOGLE_MAP_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
     private ready: Promise<void>;
 
     constructor() {
