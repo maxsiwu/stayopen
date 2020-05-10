@@ -6,7 +6,6 @@ import ActiveLocationContainer from '../components/container/ActiveLocationConta
 import SearchSliderContainer from '../components/container/SearchSliderContainer';
 
 const Home: React.FC = () => {
-
   return (
     <IonPage>
       <IonHeader>

@@ -26,6 +26,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npx ionic build --prod
+      env:
+        REACT_APP_GOOGLE_API_KEY: ${{ secrets.GOOGLE_MAP_API_KEY }}
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
