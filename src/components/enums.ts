@@ -1,0 +1,6 @@
+export enum ActionTypes {
+    SHOW_LOCATION = 'SHOW_LOCATION',
+    SHOW_ALL = 'SHOW_ALL',
+    HIDE_LOCATION = 'HIDE_LOCATION',
+    SHOW_FILTERED = 'SHOW_FILTERED'
+}

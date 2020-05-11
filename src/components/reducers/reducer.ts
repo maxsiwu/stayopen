@@ -1,4 +1,5 @@
-import { ActionTypes } from './../actions';
+import { ActionTypes } from './../enums';
+
 import { ILocation } from '../location';
 import { combineReducers } from 'redux';
 
