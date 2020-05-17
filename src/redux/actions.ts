@@ -1,12 +1,6 @@
-import { store } from './../index';
-import { ILocation } from './location';
-
-export enum ActionTypes {
-  SHOW_LOCATION = 'SHOW_LOCATION',
-  SHOW_ALL = 'SHOW_ALL',
-  HIDE_LOCATION = 'HIDE_LOCATION',
-  SHOW_FILTERED = 'SHOW_FILTERED'
-}
+import { ActionTypes } from '../components/enums';
+import { ILocation } from '../components/location';
+import { store } from './store';
 
 export interface IBaseAction {
   type: ActionTypes;

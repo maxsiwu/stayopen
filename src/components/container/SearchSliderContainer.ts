@@ -1,8 +1,8 @@
 import { ILinkList, ILinkDispatchList } from './../location';
-import { showFilteredLocations } from './../actions';
+import { showFilteredLocations } from '../../redux/actions';
 import { ILocation } from '../location';
 import { connect } from 'react-redux';
-import { RootState } from '../reducers/reducer';
+import { RootState } from '../../redux/reducers/reducer';
 import { Dispatch, AnyAction } from 'redux';
 import FilteredList from '../filteredList';
 

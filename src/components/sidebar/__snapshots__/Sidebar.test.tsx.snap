@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter snapshot renders 1`] = `
+<ion-content>
+  <ion-searchbar />
+  <ion-label>
+    Help businesses to stay open
+  </ion-label>
+</ion-content>
+`;
