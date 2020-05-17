@@ -2,5 +2,5 @@
 ## Environment vars
 ### .env
 ```
-REACT_APP_GOOGLE_API_KEY = 'put-api-key-here';
+REACT_APP_GOOGLE_API_KEY = put-api-key-here
 ```

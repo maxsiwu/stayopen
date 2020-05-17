@@ -1,6 +1,6 @@
-import { ActionTypes } from './enums';
-import { store } from './../index';
-import { ILocation } from './location';
+import { ActionTypes } from '../components/enums';
+import { ILocation } from '../components/location';
+import { store } from './store';
 
 export interface IBaseAction {
   type: ActionTypes;

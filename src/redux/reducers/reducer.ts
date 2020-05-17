@@ -1,6 +1,6 @@
-import { ActionTypes } from './../enums';
+import { ActionTypes } from '../../components/enums';
 
-import { ILocation } from '../location';
+import { ILocation } from '../../components/location';
 import { combineReducers } from 'redux';
 
 const locations = (state: ILocation[] = [], action: {type: string; locations: ILocation[] }): ILocation[] => {
@@ -17,6 +17,9 @@ const filteredLocations = (state: ILocation[] = [], action: {type: string; locat
   switch (action.type) {
     case ActionTypes.SHOW_FILTERED:
       keyword = action.keyword ? action.keyword.toLowerCase() : '';
+      if (keyword === '') {
+        return [];
+      }
       return action.locations.filter(s => s.name.toLowerCase().includes(keyword));
     default:
       return state;

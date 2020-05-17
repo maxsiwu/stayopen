@@ -1,8 +1,8 @@
 import React, { Component, createRef, ReactNode } from 'react';
-import { showLocation, loadLocations } from '../actions';
-import { store } from '../../index';
+import { showLocation, loadLocations } from '../../redux/actions';
 import { getAllLocations } from '../../services/getAllLocations';
 import GoogleMapService from '../../services/GoogleMapService';
+import { store } from '../../redux/store';
 
 class GoogleMap extends Component {
   googleMapRef = createRef<HTMLDivElement>();
