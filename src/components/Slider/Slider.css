@@ -1,0 +1,29 @@
+#slider {
+    animation-duration: 1s;
+    background-color: white;
+    max-width: 320px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    position: fixed;
+    transition: .3s;
+    z-index: 1;
+}
+.show {
+    transform: translateX(0);
+}
+
+.hidden {
+    transform: translateX(-320px);
+}
+ion-badge {
+    margin-right: .5em;
+}
+ion-list-header {
+    margin-bottom: 24px;
+}
+h1 {
+    margin-top: 20px !important;
+}
+ul {
+    margin-top: 0;
+}
