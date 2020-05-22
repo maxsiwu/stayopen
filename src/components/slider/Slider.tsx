@@ -3,7 +3,7 @@ import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonIcon, IonButt
 import './Slider.css';
 import { globeOutline, closeOutline } from 'ionicons/icons';
 import { hideLocation } from '../../redux/actions';
-import { ILocation } from '../location';
+import { ILocation } from '../Location/Location';
 import { store } from '../../redux/store';
 
 function Slider (props: {location: ILocation | null}): JSX.Element {

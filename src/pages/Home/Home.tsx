@@ -1,9 +1,9 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
-import GoogleMap from '../components/map/GoogleMap';
+import GoogleMap from '../../components/Map/GoogleMap';
 import './Home.css';
-import ActiveLocationContainer from '../components/container/ActiveLocationContainer';
-import SearchSliderContainer from '../components/container/SearchSliderContainer';
+import ActiveLocationContainer from '../../redux/container/ActiveLocationContainer';
+import SearchSliderContainer from '../../redux/container/SearchSliderContainer';
 
 const Home: React.FC = () => {
   return (

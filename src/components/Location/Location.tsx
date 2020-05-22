@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from './slider/Slider';
+import Slider from '../Slider/Slider';
 import { AnyAction } from 'redux';
 
 export interface ILocation {

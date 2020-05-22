@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
-import Sidebar from './Sidebar';
 import dummyList from '../../services/dummyList';
 import React from 'react';
+import Sidebar from './Sidebar';
 
 describe('Counter', () => {
   test('snapshot renders', () => {

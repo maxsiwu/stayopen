@@ -1,8 +1,8 @@
-import { ILinkSingle, ILinkDispatchSingle } from './../location';
-import Location, { ILocation } from '../location';
-import { showLocation, hideLocation } from '../../redux/actions';
+import { ILinkSingle, ILinkDispatchSingle } from '../../components/Location/Location';
+import Location, { ILocation } from '../../components/Location/Location';
+import { showLocation, hideLocation } from '../actions';
 import { connect } from 'react-redux';
-import { RootState } from '../../redux/reducers/reducer';
+import { RootState } from '../reducers/reducer';
 import { Dispatch } from 'redux';
 
 const mapStateToProps = (state: RootState): ILinkSingle => ({

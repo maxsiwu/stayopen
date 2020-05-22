@@ -1,4 +1,4 @@
-import { ILocation, ICategory, IService } from './../components/location';
+import { ILocation, ICategory, IService } from '../components/Location/Location';
 
 const dummyCategory: ICategory[] = [
   {

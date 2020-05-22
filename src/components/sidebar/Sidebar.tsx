@@ -1,6 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
-import { ILocation } from '../location';
+import { ILocation } from '../Location/Location';
 import { IonList, IonItem, IonLabel, IonContent, IonSearchbar } from '@ionic/react';
 import { showFilteredLocations, showLocation } from '../../redux/actions';
 import { store } from '../../redux/store';
