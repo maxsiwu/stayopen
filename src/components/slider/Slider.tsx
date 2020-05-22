@@ -11,6 +11,14 @@ function Slider (props: {location: ILocation | null}): JSX.Element {
   let link;
   const isOpen = store.getState().isSliderOpen;
 
+  const onClose = (): void => {
+    store.dispatch(hideLocation());
+  };
+
+  const openUrl = (url?: string): void => {
+    window.open(url, '_blank');
+  };
+
   if (isOpen) {
     className = 'show';
   } else {
@@ -24,14 +32,6 @@ function Slider (props: {location: ILocation | null}): JSX.Element {
   } else {
     link = <IonLabel>No Website</IonLabel>;
   }
-
-  const onClose = (): void => {
-    store.dispatch(hideLocation());
-  };
-
-  const openUrl = (url?: string): void => {
-    window.open(url, '_blank');
-  };
 
   return (
     <IonContent id="slider" className={className} key="slider-block">
