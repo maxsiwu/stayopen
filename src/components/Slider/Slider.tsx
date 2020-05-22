@@ -3,13 +3,21 @@ import { IonList, IonItem, IonLabel, IonListHeader, IonContent, IonIcon, IonButt
 import './Slider.css';
 import { globeOutline, closeOutline } from 'ionicons/icons';
 import { hideLocation } from '../../redux/actions';
-import { ILocation } from '../location';
+import { ILocation } from '../Location/Location';
 import { store } from '../../redux/store';
 
 function Slider (props: {location: ILocation | null}): JSX.Element {
   let className = 'hidden';
   let link;
   const isOpen = store.getState().isSliderOpen;
+
+  const onClose = (): void => {
+    store.dispatch(hideLocation());
+  };
+
+  const openUrl = (url?: string): void => {
+    window.open(url, '_blank');
+  };
 
   if (isOpen) {
     className = 'show';
@@ -24,14 +32,6 @@ function Slider (props: {location: ILocation | null}): JSX.Element {
   } else {
     link = <IonLabel>No Website</IonLabel>;
   }
-
-  const onClose = (): void => {
-    store.dispatch(hideLocation());
-  };
-
-  const openUrl = (url?: string): void => {
-    window.open(url, '_blank');
-  };
 
   return (
     <IonContent id="slider" className={className} key="slider-block">

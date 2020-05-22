@@ -1,10 +1,9 @@
-import { ILinkList, ILinkDispatchList } from './../location';
-import { showFilteredLocations } from '../../redux/actions';
-import { ILocation } from '../location';
+import { ILinkList, ILinkDispatchList, ILocation } from '../../components/Location/Location';
+import { showFilteredLocations } from '../actions';
 import { connect } from 'react-redux';
-import { RootState } from '../../redux/reducers/reducer';
+import { RootState } from '../reducers/reducer';
 import { Dispatch, AnyAction } from 'redux';
-import FilteredList from '../filteredList';
+import FilteredList from '../../components/FilteredList/FilteredList';
 
 const mapStateToProps = (state: RootState): ILinkList => ({
   filteredList: state.filteredLocations

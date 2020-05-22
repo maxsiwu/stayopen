@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from './sidebar/Sidebar';
-import { ILocation } from './location';
+import Sidebar from '../Sidebar/Sidebar';
+import { ILocation } from '../Location/Location';
 
 const FilteredList = (props: {filteredList: ILocation[]}): JSX.Element | null => {
   return (

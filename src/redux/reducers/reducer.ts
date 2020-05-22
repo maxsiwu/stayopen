@@ -1,6 +1,6 @@
-import { ActionTypes } from '../../components/enums';
+import { ActionTypes } from '../constants/enums';
 
-import { ILocation } from '../../components/location';
+import { ILocation } from '../../components/Location/Location';
 import { combineReducers } from 'redux';
 
 const locations = (state: ILocation[] = [], action: {type: string; locations: ILocation[] }): ILocation[] => {
