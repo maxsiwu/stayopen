@@ -1,5 +1,6 @@
 import { ILocation } from '../components/Location/Location';
 import GoogleMap from '../components/Map/GoogleMap';
+import { SILVER_MAP_STYLE } from '../redux/constants/customizedMapStyle';
 const ICON_RESTAURANT = 'https://mt.googleapis.com/vt/icon/name=icons/onion/SHARED-mymaps-container-bg_4x.png,icons/onion/SHARED-mymaps-container_4x.png,icons/onion/1577-food-fork-knife_4x.png&highlight=ff000000,0288D1&scale=1.0';
 
 class GoogleMapServices {
@@ -32,7 +33,7 @@ class GoogleMapServices {
         },
         disableDefaultUI: true
       });
-      const styledMapType = new window.google.maps.StyledMapType(this.silverMapStyle);
+      const styledMapType = new window.google.maps.StyledMapType(SILVER_MAP_STYLE);
       map.mapTypes.set('styled_map', styledMapType);
       map.setMapTypeId('styled_map');
       return map;
@@ -50,26 +51,5 @@ class GoogleMapServices {
         }
       });
     }
-
-    // light theme for google map
-    silverMapStyle = [
-      { elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] },
-      { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
-      { elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
-      { elementType: 'labels.text.stroke', stylers: [{ color: '#f5f5f5' }] },
-      { featureType: 'administrative.land_parcel', elementType: 'labels.text.fill', stylers: [{ color: '#bdbdbd' }] },
-      { featureType: 'poi', elementType: 'geometry', stylers: [{ color: '#eeeeee' }] },
-      { featureType: 'poi', elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
-      { featureType: 'poi.park', elementType: 'geometry', stylers: [{ color: '#e5e5e5' }] },
-      { featureType: 'poi.park', elementType: 'labels.text.fill', stylers: [{ color: '#9e9e9e' }] },
-      { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#ffffff' }] },
-      { featureType: 'road.arterial', elementType: 'labels.text.fill', stylers: [{ color: '#757575' }] },
-      { featureType: 'road.highway', elementType: 'geometry', stylers: [{ color: '#dadada' }] },
-      { featureType: 'road.highway', elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] },
-      { featureType: 'road.local', elementType: 'labels.text.fill', stylers: [{ color: '#9e9e9e' }] },
-      { featureType: 'transit.line', elementType: 'geometry', stylers: [{ color: '#e5e5e5' }] },
-      { featureType: 'transit.station', elementType: 'geometry', stylers: [{ color: '#eeeeee' }] },
-      { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#c9c9c9' }] },
-      { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#9e9e9e' }] }]
 }
 export default new GoogleMapServices();
