@@ -1,4 +1,4 @@
-// light theme for google map
+// define constant light theme for google map
 export const SILVER_MAP_STYLE = [
   { elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] },
   { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
