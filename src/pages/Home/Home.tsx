@@ -8,11 +8,6 @@ import SearchSliderContainer from '../../redux/container/SearchSliderContainer';
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle><b>Stay Open</b></IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>

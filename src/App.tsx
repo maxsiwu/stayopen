@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { Route, Redirect } from 'react-router-dom';
+import { IonApp, IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, IonTabs, IonTabBar, IonTabButton, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home/Home';
 
@@ -22,14 +22,36 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import About from './pages/About/About';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
-        <IonRouterOutlet>
-          <Route path="/" component={Home} exact={true} />
-        </IonRouterOutlet>
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonTitle>Stay Open</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <IonTabs>
+            <IonRouterOutlet>
+              <Route path="/" component={Home} exact />
+              <Route path="/about" component={About} exact />
+              <Route path="/error" component={ErrorPage} />
+              <Redirect to="/error" />
+            </IonRouterOutlet>
+            <IonTabBar slot="bottom">
+              <IonTabButton tab="home" href="/">
+                <IonLabel>Home</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="about" href="/about">
+                <IonLabel>About</IonLabel>
+              </IonTabButton>
+            </IonTabBar>
+          </IonTabs>
+        </IonContent>
       </IonReactRouter>
     </IonApp>
   );
