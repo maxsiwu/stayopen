@@ -39,8 +39,7 @@ const App: React.FC = () => {
             <IonRouterOutlet>
               <Route path="/" component={Home} exact />
               <Route path="/about" component={About} exact />
-              <Route path="/error" component={ErrorPage} />
-              <Redirect to="/error" />
+              <Route path="*" component={ErrorPage} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">
               <IonTabButton tab="home" href="/">
