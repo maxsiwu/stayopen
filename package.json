@@ -2,7 +2,7 @@
   "name": "stayopen",
   "version": "0.0.1",
   "private": true,
-  "homepage":"./",
+  "homepage":"/",
   "dependencies": {
     "@ionic/cli": "^6.6.0",
     "@ionic/react": "^5.0.7",

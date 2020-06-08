@@ -28,7 +28,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 const App: React.FC = () => {
   return (
     <IonApp>
-      <IonReactRouter forceRefresh={true}>
+      <IonReactRouter>
         <IonHeader>
           <IonToolbar color="primary">
             <IonTitle>Stay Open</IonTitle>
