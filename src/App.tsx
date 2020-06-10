@@ -26,8 +26,12 @@ import About from './pages/About/About';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import { Auth0Context } from './context/auth0-context';
 
+interface IAuth {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  loginWithRedirect: any;
+}
 const App: React.FC = () => {
-  const auth0 = useContext(Auth0Context);
+  const auth0: IAuth | null = useContext(Auth0Context);
   return (
     <IonApp>
       <IonReactRouter>
@@ -50,9 +54,12 @@ const App: React.FC = () => {
               <IonTabButton tab="about" href="/about">
                 <IonLabel>About</IonLabel>
               </IonTabButton>
-              <IonTabButton onClick={auth0.loginWithRedirect} tab="login">
-                <IonLabel>Login</IonLabel>
-              </IonTabButton>
+              { auth0 !== null ? (
+                <IonTabButton onClick= {auth0.loginWithRedirect} tab="login">
+                  <IonLabel>Login</IonLabel>
+                </IonTabButton>
+              ) : (<p>No auth</p>)
+              }
 
             </IonTabBar>
           </IonTabs>

@@ -3,7 +3,7 @@ import React, { Component, createContext } from 'react';
 import createAuth0Client from '@auth0/auth0-spa-js';
 
 // create the context
-export const Auth0Context = createContext(null);
+export const Auth0Context = createContext();
 
 // create a provider
 export class Auth0Provider extends Component {
