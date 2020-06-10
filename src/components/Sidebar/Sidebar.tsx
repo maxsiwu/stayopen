@@ -13,8 +13,9 @@ interface ISidebarState {
 }
 class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
   className = '';
-  locationList = [];
+  locationList: ILocation[] = [];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor (props: any) {
     super(props);
     this.state = {
@@ -57,7 +58,9 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
     return (
       <IonContent id="sidebar" key="sidebar-block" className={this.className}>
         <IonSearchbar value={this.state.searchText} color="light" onIonChange={e => {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           this.setSearchText(e.detail.value!);
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           this.sendToStore(e.detail.value!);
         }}></IonSearchbar>
         {list}
