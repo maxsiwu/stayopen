@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, IonTabs, IonTabBar, IonTabButton, IonLabel } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -24,8 +24,10 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import About from './pages/About/About';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import { Auth0Context } from './context/auth0-context';
 
 const App: React.FC = () => {
+  const auth0 = useContext(Auth0Context);
   return (
     <IonApp>
       <IonReactRouter>
@@ -48,6 +50,10 @@ const App: React.FC = () => {
               <IonTabButton tab="about" href="/about">
                 <IonLabel>About</IonLabel>
               </IonTabButton>
+              <IonTabButton onClick={auth0.loginWithRedirect} tab="login">
+                <IonLabel>Login</IonLabel>
+              </IonTabButton>
+
             </IonTabBar>
           </IonTabs>
         </IonContent>

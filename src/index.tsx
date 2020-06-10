@@ -4,11 +4,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { Auth0Provider } from './context/auth0-context';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Auth0Provider>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Auth0Provider>,
   document.getElementById('root')
 );
 
