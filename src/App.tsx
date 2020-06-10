@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, IonTabs, IonTabBar, IonTabButton, IonLabel } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, IonTabs, IonTabBar, IonTabButton, IonLabel, IonButton } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home/Home';
 
@@ -31,13 +31,34 @@ interface IAuth {
   loginWithRedirect: any;
 }
 const App: React.FC = () => {
-  const auth0: IAuth | null = useContext(Auth0Context);
+  // const auth0: IAuth | null = useContext(Auth0Context);
+  const { isLoading, user, loginWithRedirect, logout } = useContext(Auth0Context);
   return (
     <IonApp>
       <IonReactRouter>
         <IonHeader>
           <IonToolbar color="primary">
-            <IonTitle>Stay Open</IonTitle>
+            <IonTitle id="brand">Stay Open</IonTitle>
+            {!isLoading && !user && (
+              <>
+                <IonButton class="auth__action" color="light" onClick= {loginWithRedirect}>
+                  Login
+                </IonButton>
+              </>
+            )}
+            {!isLoading && user && (
+              <>
+                <IonButton
+                  onClick={(): void => logout({ returnTo: window.location.origin })} color="light"
+                  class="auth__action">
+                  Logout
+                </IonButton>
+                <div id="profile">
+                  <p>Hello, {user.name}</p>
+                  {user.picture && <img id="profile-image" src={user.picture} alt="My Avatar" />}
+                </div>
+              </>
+            )}
           </IonToolbar>
         </IonHeader>
         <IonContent>
@@ -54,13 +75,6 @@ const App: React.FC = () => {
               <IonTabButton tab="about" href="/about">
                 <IonLabel>About</IonLabel>
               </IonTabButton>
-              { auth0 !== null ? (
-                <IonTabButton onClick= {auth0.loginWithRedirect} tab="login">
-                  <IonLabel>Login</IonLabel>
-                </IonTabButton>
-              ) : (<p>No auth</p>)
-              }
-
             </IonTabBar>
           </IonTabs>
         </IonContent>
