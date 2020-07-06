@@ -62,6 +62,8 @@ class Sidebar extends React.Component<ISidebarProps, ISidebarState> {
           this.setSearchText(e.detail.value!);
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           this.sendToStore(e.detail.value!);
+          // mixpanel
+          window.mixpanel.track('searched', { keyword: e.detail.value });
         }}></IonSearchbar>
         {list}
       </IonContent>
