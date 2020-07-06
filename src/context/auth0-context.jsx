@@ -38,6 +38,15 @@ export class Auth0Provider extends Component {
 
     const isAuthenticated = auth0Client.isAuthenticated();
     const user = isAuthenticated ? await auth0Client.getUser() : null;
+    // for mixpanel
+    if (user) {
+      window.mixpanel.identify(1);
+      window.mixpanel.people.set({
+        $email: user.email, // only special properties need the $
+        'Sign up date': Date.now(), // Send dates in ISO timestamp format (e.g. "2020-01-02T21:07:03Z")
+        USER_ID: 1
+      });
+    }
     this.setState({ auth0Client, isLoading: false, isAuthenticated, user });
   };
 
